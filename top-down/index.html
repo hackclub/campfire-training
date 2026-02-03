@@ -163,24 +163,31 @@ movement_speed = 1</pre>
                     <p>the Step event runs every step (60 times per second), so any code here will be constantly running</p>
                     <p>lets first check for keyboard input. add this code to the <span>Step</span> event</p>
                     <pre class="code">
-left = keyboard_check(ord("A")) <br/>
-right = keyboard_check(ord("D"))<br/>
-up = keyboard_check(ord("W"))<br/>
-down = keyboard_check(ord("S"))<br/>
+x_speed = 0 <br/>
+y_speed = 0 <br/>
 
-horizontal_input = 0 + right - left <span class="green">// calculates the horizontal input</span><br/>
-vertical_input = 0 + down - up <span class="green">// calculates the horizontal input</span></pre>
-                    <p>this creates 4 variables that will each be 1 if the button is pressed or 0 if it isnt</p>
-                    <p>we use keyboard_check to check if the a key is being pressed</p>
-                    <p>next, we calculate the horizontal input, by using <span>right - left</span>, we make it so that <span>horizontal_input</span> is 1 if the player is moving right, -1 if they're moving left, or 0 if they aren't moving in the horizontal direction</p>
-                    <p>we do the same for vertical movement, with 1 corresponding to downwards, -1 corresponding to upwards, and 0 corresponding to no vertical movement</p>
+if (keyboard_check(ord("D"))) { <span class="green">// if the d key is pressed</span> <br/>
+    x_speed = movement_speed <span class="green">// add the movement speed to the x_speed variable <br/></span>
+} 
+
+if (keyboard_check(ord("A"))) { <br/>
+    x_speed = -movement_speed <br/>
+} <br/>
+
+if (keyboard_check(ord("W"))) { <br/>
+    y_speed = -movement_speed <br/>
+} <br/>
+
+if (keyboard_check(ord("S"))) { <br/>
+    y_speed = movement_speed <br/>
+}</pre>
+                    <p>this creates a variable for movement in the x and y directions and uses keypresses to add our movement_speed to these variables</p>
                     <p><span class="green"> gamemaker works a lot like an coordinate plane, with positive x values being towards the right and negative x values being towards the left. however, the vertical direction is flipped, with positive y values going downwards and negative y values going upwards </span></p>
                     <br/>
                     <p>now, we can do our movement</p>
                     <pre class="code">
-x += horizontal_input * movement_speed <br/>
-y += vertical_input * movement_speed</pre>
-                    <p>we multiply our input by the movement speed to get our total movement in each direction, and then add that to the x and y position of the player</p>
+x += x_speed <br/>
+y += y_speed</pre>
                     <p>+= means that we are adding something to a value, so in this case we are adding our movement to the original player position</p>
                     <p>remember, this happens multiple times a second so it should seem like smooth motion. click play and find out!</p>
                     <p>now, test out your code by hitting play!</p>
@@ -195,9 +202,9 @@ y += vertical_input * movement_speed</pre>
                     <p>first, you can change the movement speed in the <span>Create</span> event. find a speed you like!</p>
                     <p>next, lets make heidi face the direction she moves. add this to your code:</p>
                     <pre class="code">
-if(horizontal_input < 0) { <span class="green">// if heidi is moving to the left</span><br/>
+if(x_speed < 0) { <span class="green">// if heidi is moving to the left</span><br/>
     image_xscale = 1 <span class="green">// make the sprite normal, what heidi already looks like</span><br/>
-} else if (horizontal_input > 0) { <span class="green">// but if shes moving to the right</span><br/>
+} else if (x_speed > 0) { <span class="green">// but if shes moving to the right</span><br/>
     image_xscale = -1 <span class="green">// flip heidi's sprite</span><br/>
 }</pre>
                     <p>if you try this, you'll notice heidi teleports every time she flips, this is because she flips around the "origin" of her sprite, which isn't the center</p>
@@ -231,11 +238,11 @@ if(horizontal_input < 0) { <span class="green">// if heidi is moving to the left
                     <p>this will serve as a parent object for all of our solid objects, meaning that we could add all sorts of things to its children like rocks and buildings, and if we check that heidi collides with oSolid it will include collisions with all of its children.</p>
                     <p>go in your <span>Step</span> event and replace this:</p>
                     <pre class="code">
-x += horizontal_input * movement_speed <br/>
-y += vertical_input * movement_speed</pre>
+x += x_speed <br/>
+y += y_speed</pre>
                         with this:
                     <pre class="code">
-move_and_collide(horizontal_input * movement_speed, vertical_input * movement_speed, oSolid)</pre>
+move_and_collide(x_speed, y_speed, oSolid)</pre>
                     <p>go ahead and try it out!</p>
                 </div>
             </div>

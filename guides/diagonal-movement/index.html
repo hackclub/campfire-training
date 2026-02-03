@@ -11,23 +11,7 @@
             <p>if you were following my top-down tutorial, you may have noticed that your player moves faster when going diagonal.</p>
             <p>the reason for this is simple, take a look at our current code:</p>
             <pre class="code">
-left = keyboard_check(ord("A")) 
-
-right = keyboard_check(ord("D"))
-
-up = keyboard_check(ord("W"))
-
-down = keyboard_check(ord("S"))
-
-
-horizontal_input = 0 + right - left
-
-vertical_input = 0 + down - up
-
-x += horizontal_input * movement_speed 
-
-y += vertical_input * movement_speed</pre>
-
+move_and_collide(horizontal_input * movement_speed, vertical_input * movement_speed, oSolid)</pre>
             <p>if the player is moving both vertically and horizontally, we are adding to both the x and y position, and if the player only moves in one direction, it will only add one of those variables.</p>
             
             <p>time for some math:</p>
@@ -36,20 +20,18 @@ y += vertical_input * movement_speed</pre>
 
             <p>now update your code:</p>
             <pre class="code">
-if(horizontal_input != 0 and vertical_input !=0) { <span class="green">// if the movement in both directions are not 0 </span>
+if(x_speed != 0 and x_speed != 0 ) { <span class="green">// if the movement in both directions are not 0 </span>
 
     <span class="green">// multiply movement by .707 in both directions</span>
 
-    x += horizontal_input * movement_speed * .707
-
-    y += vertical_input * movement_speed * .707
+    move_and_collide(horizontal_input * movement_speed * .707, vertical_input * movement_speed * .707, oSolid)
 
 } else { <span class="green"> // if the movement is only in one direction </span>
+
     <span class="green">// move normally</span>
 
-    x += horizontal_input * movement_speed
+    move_and_collide(horizontal_input * movement_speed, vertical_input * movement_speed, oSolid)
 
-    y += vertical_input * movement_speed
 }</pre>
             <p>now your movement should feel better! this really shows how math can be used in the real world</p>
 

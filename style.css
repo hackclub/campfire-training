@@ -265,6 +265,8 @@ a {
 .normal {
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: fill;
     background: #080a23;
     border: #080a23 2px solid;
