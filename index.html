@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>campfire x overdrive</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="header">
+            
+            <img src="assets/stars.svg" class="stars"/>
+            <img src="assets/bg2.svg" class="header-bg"/>
+            <img src="assets/glow.svg" class="header-bg"/>
+            <div class="header-text">
+                <div class="logo-container">
+                    <div class="logo-transform">
+                      <h1 class="campfire-title">CAMPFIRE</h1>
+                    </div>
+                    <span class="logo-separator">×</span>
+                    <img src="assets/logo2.png" class="logo"/> 
+                </div>
+                <p class="header-subtitle"> campfire organizer training!</p>
+            </div>
+        </div>
+        <div class="section-2"> 
+            <div class="section-2-container">
+            <div class="column-1">
+                <img class="how-it-works" src="assets/how-it-works.png"/>
+            </div>
+            <div class="column-2">
+                <p class="steps"> - follow the steps below to make a game</p>
+                <p class="steps"> - use the theme <span class="yay">stuck in a loop</span></p>
+                <p class="steps"> - submit <a href="https://forms.hackclub.com/campfire-training" target="_blank">here</a> to get 10$ transferred to your hcb</p>
+                <center>
+                <img width="80px" src="https://emoji.slack-edge.com/T09V59WQY1E/yay/47296c029c8ee253.gif"/>
+                </center>
+            </div>  
+            </div>
+            
+        </div>
+        <div class="section-header">
+            <div>
+                    step 1 - complete a tutorial!
+            </div>
+            
+        </div>
+        <div class="section-3">
+            <div class="container">
+                
+                <div class="buttons-container">
+                    
+                    <div  class="buttons">
+                        <div class="buttons-image-1"></div>
+                        <div class="buttons-image-2"></div>
+                        <div class="buttons-image-3"></div>
+                    </div>
+                    <div class="platformer" onclick="window.open('platformer');"></div>
+                    <div class="rpg" onclick="window.open('top-down');"></div>
+                    <!-- <img src="assets/glow-buttons.png" class="buttons"/> -->
+                </div>
+            </div>
+        </div>
+        <div class="section-2"> 
+            <div class="section-2-container">
+            <div class="column-3">
+                <p>step 2:<br/>brainstorm</p>
+            </div>
+            <div class="column-4">
+                <p class="steps">your theme is:<br/><span class="bold">stuck in a loop!</span></p>
+                
+                <p class="steps"><a target="_blank" href="/brainstorm">how to make a good game jam game?</a></p>
+            </div>  
+            </div>
+            
+        </div>
+
+        <div class="section-header">
+            <div>
+                step 2 - github
+            </div>
+        </div>
+        <iframe src="github/index.html" class="tutorial-iframe"></iframe>
+        <div class="section-header">
+            <div>
+
+                <span class="step-4">step 4 - make your game!!!! here are guides to help: </span>
+                
+            </div>
+        </div>
+
+        <div class="section-2"> 
+            <div class="guides">
+                <a target="_blank" href="https://gamemaker.io/en/tutorials"><div class="important">gamemaker official tutorials! <br/>(there are SO many good ones)</div></a>
+                <a target="_blank" href="/guides/itchio"><div class="normal">how to find and use assets/art from itch.io</div></a>
+                <a target="_blank" href="/guides/blurry"><div class="normal">why is my pixel art blurry?</div></a>
+                <a href="/guides/diagonal-movement"><div class="normal">why does my player move faster when going diagonal than horizontal/vertical?</div></a>
+                
+                <p>more coming soon!</p>  
+            </div>
+            
+        </div>
+        
+        <div class="section-header">
+            <div>
+                step 5 - shipping
+                
+            </div>
+        </div>
+        <iframe src="shipping/index.html" class="tutorial-iframe"></iframe>
+        <div class="footer">
+            made with ❤️ from hack club <br/>
+            -rishabh agarwal
+        </div>
+    </body>
+
+    <script>
+        (function() {
+            const headerText = document.querySelector('.header-text');
+            const stars = document.querySelector('.stars');
+            let targetY = 0;
+            let displayedHeaderY = 0;
+            let displayedStarsY = 0;
+
+            // update target on scroll (passive for performance)
+            window.addEventListener('scroll', () => {
+                targetY = window.scrollY || 0;
+            }, { passive: true });
+
+            // smoothing factor (0 < K < 1). Larger = quicker response, less smoothing.
+            // Increased to make lerp less extreme / more responsive.
+            const K = 0.18;
+
+            function tick() {
+                // compute target transforms
+                const headerTarget = targetY * 0.20; // header moves at 40%
+                const starsTarget = targetY * 0.1;  // stars move at 10%
+
+                // lerp towards target values for smooth motion
+                displayedHeaderY += (headerTarget - displayedHeaderY) * K;
+                displayedStarsY += (starsTarget - displayedStarsY) * K;
+
+                // apply GPU-accelerated transforms
+                if (headerText) headerText.style.transform = `translate3d(0, ${displayedHeaderY}px, 0)`;
+                if (stars) stars.style.transform = `translate3d(0, ${displayedStarsY}px, 0)`;
+
+                requestAnimationFrame(tick);
+            }
+
+            // kick off the loop
+            requestAnimationFrame(tick);
+        })();
+    </script>
+</html>

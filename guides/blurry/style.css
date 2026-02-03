@@ -1,0 +1,195 @@
+.content {
+    width: 100%;
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    font-size: 22px;
+    font: 'pixel';
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.content.active {
+    display: grid;
+    height: calc(100%);
+}
+.img-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.img-3-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+img {
+    border-radius: 8px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff transparent;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+.content.active {
+    display: grid;
+}
+.slideshow-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1c2248f9;
+}
+.slide-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'pixel';
+    background-color: #e99997;
+    color: #0a0d20;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.slide-btn:active {
+    transform: scale(0.95);
+}
+#slideCounter {
+    font-family: 'pixel';
+    font-size: 18px;
+    color: white;
+    min-width: 80px;
+    text-align: center;
+}
+.content-full {
+    width: 100%;
+    display: none;
+    color: white;
+    font-size: 20px;
+    font: 'pixel';
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.content-full.active {
+    display: grid;
+    height: calc(100% - 70px);
+}
+.full-column {
+    padding-left:  50px;
+    padding-right: 50px;
+}
+.container {
+    background-color: #0f1240f8;
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    margin: 40px;
+    border: #9cdcc4 4px solid;
+    box-shadow:
+    0 0 6px #9cdcc4b3,
+    inset 0 0 10px #9cdcc4b3; 
+}
+.column {
+    padding-left: 50px;
+    padding-right: 50px;
+    min-width: 0;
+}
+.right {
+    border-left: 2px solid white;
+    padding-top:40px;
+    padding-bottom:40px;
+    min-width: 0;
+    background-color: #3b3d51f9;
+}
+body {
+    font-family: 'regular';
+    background: url('assets/glow.svg') center bottom no-repeat fixed,
+        url('assets/bg2.svg') center bottom no-repeat fixed,
+        url('../assets/stars.svg') center bottom no-repeat fixed,
+        url('assets/bg3.svg') center bottom no-repeat fixed;
+    background-size: auto 100vh;
+
+    line-height: 1.6;
+    margin: 0;
+    overflow: hidden;
+}
+.body-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+p {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.header {
+    font-size: 50px;
+    font-family: 'pixel';
+}
+.bold {
+    color: #e99997;
+    
+}
+span {
+    color: #e99997;
+}
+.green {
+    color: #b9dc8e;
+}
+a {
+    color: #9cdcc4;
+}
+.code {
+    background-color: #303354;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'regular';
+    font-size: 15px;
+    line-height: 1;
+}
+
+@font-face {
+  font-family: 'regular'; /* Choose any name you like */
+  src: url('./assets/Outfit-Light.ttf') format('truetype'); /* Specify the path to your file */
+  font-weight: normal; /* Optional: define weight if the font has only one */
+  font-style: normal; /* Optional: define style */
+}
+@font-face {
+  font-family: 'pixel'; /* Choose any name you like */
+  src: url('./assets/PixelOperator.ttf') format('truetype'); /* Specify the path to your file */
+  font-weight: normal; /* Optional: define weight if the font has only one */
+  font-style: normal; /* Optional: define style */
+}

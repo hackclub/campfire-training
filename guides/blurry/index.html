@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>heidi jump</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="../../assets/favicon.png" type="image/x-icon">
+    </head>
+    <body>
+        <div class="container">
+            
+            <!-- ------------------------- INTRO -------------------------------- -->
+            <!-- ------------------------- INTRO -------------------------------- -->
+            <div class="content active">
+                <div class="column left">
+                    <p class="header">my pixel art game is blurry :(</p>
+                    <p>hi! </p>
+                    <p> blurry pixel art is no fun :( lets fix this!</p>
+                    <p>in <span>GameMaker</span>, go to settings in the top left and go to <span>HTML5</span>.</p>
+                    <p>then, go to <span>Graphics</span> and uncheck <span>Interpolate colors between pixels</span>.</p>
+                    <p>thats it! no more blurry pixel art :)</p>
+                </div>
+                <div class="column right">
+
+                    <img src="assets/settings.png" width="100%">
+                    <img src="assets/html5.png" style="margin-top: 10px;" width="100%">
+                    <img src="assets/graphics.png" style="margin-top: 10px;" width="100%">
+
+                </div> 
+            </div>
+
+            
+        </div>
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.content, .content-full');
+            const totalSlides = slides.length;
+
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[n].classList.add('active');
+                slides[n].scrollTop = 0;
+                document.getElementById('slideCounter').textContent = (n + 1) + ' / ' + totalSlides;
+                currentSlide = n;
+            }
+
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                showSlide((currentSlide + 1) % totalSlides);
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                showSlide((currentSlide - 1 + totalSlides) % totalSlides);
+            });
+
+            // Initialize
+            showSlide(0);
+        </script>
+    </body>
+</html>
