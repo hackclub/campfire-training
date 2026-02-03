@@ -113,6 +113,7 @@
     padding-left: 50px;
     padding-right: 50px;
     min-width: 0;
+    font-family: 'regular';
 }
 .right {
     border-left: 2px solid white;
@@ -134,7 +135,7 @@
 }
 
 
-.wrap p {
+.column p {
     margin-bottom: 5px;
     font-size: 20px;
 }
@@ -147,13 +148,13 @@
     color: #e99997;
     
 }
-.wrap span {
+.column span {
     color: #e99997;
 }
 .green {
     color: #b9dc8e;
 }
-.wrap a {
+.column a {
     color: #9cdcc4;
 }
 .code {
