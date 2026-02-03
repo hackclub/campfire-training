@@ -354,6 +354,15 @@ a {
     flex-direction: column;
     justify-content: center;
 }
+.container-buttons{
+    padding: 0px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .buttons {
     width: 100vw;
     height: 56.8vw;
@@ -467,7 +476,6 @@ a {
 
 .tutorial-iframe {
     width: 100%;
-    height: 100vh;
     border: none;
     background-color: #0f1240;
 }

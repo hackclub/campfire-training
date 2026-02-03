@@ -38,14 +38,14 @@
             </div>
             
         </div>
-        <div class="section-header">
+        <div class="section-header" id="step-1">
             <div>
                     step 1 - complete a tutorial!
             </div>
             
         </div>
         <div class="section-3">
-            <div class="container">
+            <div class="container-buttons">
                 
                 <div class="buttons-container">
                     
@@ -62,7 +62,7 @@
         </div>
         <div class="section-2"> 
             <div class="section-2-container">
-            <div class="column-3">
+            <div class="column-3" id="step-2">
                 <p>step 2:<br/>brainstorm</p>
             </div>
             <div class="column-4">
@@ -73,14 +73,14 @@
             </div>
             
         </div>
-
-        <div class="section-header">
+        <div class="section-header" id="step-3">
             <div>
-                step 2 - github
+                step 3 - github/source control
+                
             </div>
         </div>
-        <iframe src="github/index.html" class="tutorial-iframe"></iframe>
-        <div class="section-header">
+        <div id="githubguide"></div>
+        <div class="section-header" id="step-4">
             <div>
 
                 <span class="step-4">step 4 - make your game!!!! here are guides to help: </span>
@@ -90,7 +90,7 @@
 
         <div class="section-2"> 
             <div class="guides">
-                <a target="_blank" href="https://gamemaker.io/en/tutorials"><div class="important">gamemaker official tutorials! <br/>(there are SO many good ones)</div></a>
+                <a target="_blank" href="https://gamemaker.io/en/tutorials"><div class="important">official gamemaker tutorials!</div></a>
                 <a target="_blank" href="/guides/itchio"><div class="normal">how to find and use assets/art from itch.io</div></a>
                 <a target="_blank" href="/guides/blurry"><div class="normal">why is my pixel art blurry?</div></a>
                 <a href="/guides/diagonal-movement"><div class="normal">why does my player move faster when going diagonal than horizontal/vertical?</div></a>
@@ -100,13 +100,13 @@
             
         </div>
         
-        <div class="section-header">
+        <div class="section-header" id="step-5">
             <div>
                 step 5 - shipping
                 
             </div>
         </div>
-        <iframe src="shipping/index.html" class="tutorial-iframe"></iframe>
+        <div id="shipguide"></div>
         <div class="footer">
             made with ❤️ from hack club <br/>
             -rishabh agarwal
@@ -114,6 +114,19 @@
     </body>
 
     <script>
+
+    fetch("/shipping/index.html")
+    .then(r => r.text())
+    .then(html => {
+        document.getElementById("shipguide").innerHTML = html;
+    });
+
+    fetch("/github/index.html")
+    .then(r => r.text())
+    .then(html => {
+        document.getElementById("githubguide").innerHTML = html;
+    });
+
         (function() {
             const headerText = document.querySelector('.header-text');
             const stars = document.querySelector('.stars');
@@ -149,5 +162,7 @@
             // kick off the loop
             requestAnimationFrame(tick);
         })();
+
     </script>
+
 </html>
