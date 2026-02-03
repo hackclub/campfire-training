@@ -1,9 +1,9 @@
 <html>
     <head>
         <title>campfire x overdrive</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/guides/diagonal-movement/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="../../assets/favicon.png" type="image/x-icon">
+        <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
     </head>
     <body>
         <div class="container">
@@ -31,7 +31,7 @@ y += vertical_input * movement_speed</pre>
             <p>if the player is moving both vertically and horizontally, we are adding to both the x and y position, and if the player only moves in one direction, it will only add one of those variables.</p>
             
             <p>time for some math:</p>
-            <img width="50%" src="assets/pythagorean-theorem.png"/>
+            <img width="50%" src="/guides/diagonal-movement/assets/pythagorean-theorem.png"/>
             <p>if the player is moving in two directions at once, but you want the overall speed to be one, by the pythagorean theorem the speed in each directions needs to be around .707</p>
 
             <p>now update your code:</p>

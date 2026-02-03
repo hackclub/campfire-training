@@ -1,8 +1,8 @@
 <html>
     <head>
-        <title>heidi jump</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="../assets/favicon.png" type="image/x-icon">
+        <title>campfire x overdrive</title>
+        <link rel="stylesheet" href="/top-down/style.css">
+        <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
     </head>
     <body>
         <div class="container">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="column right">
 
-                    <img src="assets/game.gif" width="100%">
+                    <img src="/top-down/assets/game.gif" width="100%">
 
                 </div> 
             </div>
@@ -33,9 +33,9 @@
                 </div>
                 <div class="column right">
                     <center>
-                    <img src="assets/make-project.png" width="75%" />
-                    <img src="assets/welcome-tab.png" width="75%" style="margin-top: 10px;"/>
-                    <img src="assets/editor.png" width="75%" style="margin-top: 10px;"/>
+                    <img src="/top-down/assets/make-project.png" width="75%" />
+                    <img src="/top-down/assets/welcome-tab.png" width="75%" style="margin-top: 10px;"/>
+                    <img src="/top-down/assets/editor.png" width="75%" style="margin-top: 10px;"/>
                     </center>
                 </div> 
             </div>
@@ -55,14 +55,14 @@
                 </div>
                 <div class="column right">
                     <div class="img-columns">
-                        <img src="assets/create-group.png" width="100%"/>
+                        <img src="/top-down/assets/create-group.png" width="100%"/>
                         <div>
-                        <img src="assets/create-sprite.png" width="100%"/>
-                        <img src="assets/yes.png" width="100%" style="margin-top: 10px;"/>
+                        <img src="/top-down/assets/create-sprite.png" width="100%"/>
+                        <img src="/top-down/assets/yes.png" width="100%" style="margin-top: 10px;"/>
                         </div>
                     </div>
                     
-                    <img src="assets/sprites-import.png" width="100%"/>
+                    <img src="/top-down/assets/sprites-import.png" width="100%"/>
 
                 </div> 
             </div>
@@ -82,8 +82,8 @@
                     <p class="green"> make sure to keep saving regularly! ctrl + s (windows) or cmd + s (mac)</p>
                 </div>
                 <div class="column right">
-                    <img src="assets/objects.png" width="100%"/>
-                    <img src="assets/all-objects.png" width="50%" style="margin-top: 10px;"/>  
+                    <img src="/top-down/assets/objects.png" width="100%"/>
+                    <img src="/top-down/assets/all-objects.png" width="50%" style="margin-top: 10px;"/>  
                     
                 </div> 
             </div>
@@ -106,15 +106,15 @@
                 <div class="column right">
                     
                     <div class="img-3-columns">
-                    <center><img src="assets/background.png" width="100%" style="margin-top: 10px;"/></center>
-                    <center><img src="assets/room-size.png" width="100%" center="true" style="margin-right: 10px;"/></center>
+                    <center><img src="/top-down/assets/background.png" width="100%" style="margin-top: 10px;"/></center>
+                    <center><img src="/top-down/assets/room-size.png" width="100%" center="true" style="margin-right: 10px;"/></center>
 
-                    <center><img src="assets/camera.png" width="100%" style="margin-left: 10px;"/></center>
+                    <center><img src="/top-down/assets/camera.png" width="100%" style="margin-left: 10px;"/></center>
                     </div>
                     <center>
-                    <img src="assets/grids.png" width="75%" style="margin-top: 10px;"/>
+                    <img src="/top-down/assets/grids.png" width="75%" style="margin-top: 10px;"/>
                     </center>
-                    <img src="assets/level.png" width="100%" style="margin-top: 10px;"/>
+                    <img src="/top-down/assets/level.png" width="100%" style="margin-top: 10px;"/>
                 </div> 
             </div>
 
@@ -127,8 +127,8 @@
                     <p>lets fix that!</p>
                 </div>
                 <div class="column right"> 
-                    <img src="assets/html.png" width="100%"/>
-                    <img src="assets/play.png" width="100%" style="margin-top: 10px;"/>
+                    <img src="/top-down/assets/html.png" width="100%"/>
+                    <img src="/top-down/assets/play.png" width="100%" style="margin-top: 10px;"/>
                 </div> 
             </div>
 
@@ -141,7 +141,7 @@
                 </div>
                 <div class="column right">
 
-                    <img src="assets/events.png" width="100%"/>
+                    <img src="/top-down/assets/events.png" width="100%"/>
                 </div> 
             </div>
             
@@ -202,7 +202,7 @@ if(horizontal_input < 0) { <span class="green">// if heidi is moving to the left
 }</pre>
                     <p>if you try this, you'll notice heidi teleports every time she flips, this is because she flips around the "origin" of her sprite, which isn't the center</p>
                     <p>open heidis sprite and change the origin from top left to middle centre</p>
-                    <img src="assets/origin.png" />
+                    <img src="/top-down/assets/origin.png" />
                     <p>now it should be working!</p>
                 </div>
 
@@ -217,7 +217,7 @@ if(horizontal_input < 0) { <span class="green">// if heidi is moving to the left
                     <p>then, go to <span>Parent</span> and add <span>oPlatform</span> as a child object</p>
                 </div>
                 <div class="column right">
-                    <img src="assets/parent.png" width="100%"/>
+                    <img src="/top-down/assets/parent.png" width="100%"/>
                 </div>
 
             </div>
@@ -227,7 +227,7 @@ if(horizontal_input < 0) { <span class="green">// if heidi is moving to the left
                     <p class="header">collisions</p>
                     <p>lets make it so heidi doesn't walk right through the trees now</p>
                     <p>first, create an object called oSolid, go to <span>Parent</span> and add <span>oTree</span> to its <span>Children</span></p>
-                    <img src="assets/parent.png" width="50%"/>
+                    <img src="/top-down/assets/parent.png" width="50%"/>
                     <p>this will serve as a parent object for all of our solid objects, meaning that we could add all sorts of things to its children like rocks and buildings, and if we check that heidi collides with oSolid it will include collisions with all of its children.</p>
                     <p>go in your <span>Step</span> event and replace this:</p>
                     <pre class="code">
@@ -264,7 +264,7 @@ mp_potential_step(oPlayer.x, oPlayer.y, (your movement speed variable), true)</p
                     <p class="green">its now time to make your real game, head <a href="../">back</a> and go to step 2 where you'll come up with a game idea!</p>
                 </div>
                 <div class="column right">
-                    <img src="assets/game.gif" width="100%"/>
+                    <img src="/top-down/assets/game.gif" width="100%"/>
                 </div>
             </div>
             <div class="slideshow-controls">

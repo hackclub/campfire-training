@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'dream-planner';
-  src: url('assets/dreamplanner.woff') format('woff');
+  src: url('/assets/dreamplanner.woff') format('woff');
 }
 
 html {
   background-color: #0f1240; /* The desired overscroll color (e.g., a shade of orange) */
 }
 .header {
-    background: url('assets/bg10.svg');
+    background: url('/assets/bg10.svg');
     background-size: cover;
     background-repeat:  no-repeat;
     width: 100%;
@@ -359,7 +359,7 @@ a {
 }
 .buttons-image-1 {
     image-rendering: pixelated;
-    background: url('assets/buttons.png') center bottom no-repeat;
+    background: url('/assets/buttons.png') center bottom no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -367,7 +367,7 @@ a {
 }
 .buttons-image-2 {
     image-rendering: smooth;
-    background: url('assets/glow-buttons.png') center bottom no-repeat;
+    background: url('/assets/glow-buttons.png') center bottom no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -405,7 +405,7 @@ a {
 }
 .buttons-image-3 {
     image-rendering: pixelated;
-    background: url('assets/outline.png') center bottom no-repeat;
+    background: url('/assets/outline.png') center bottom no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -458,7 +458,7 @@ a {
 }
 @font-face {
   font-family: 'pixel'; /* Choose any name you like */
-  src: url('assets/PixelOperator.ttf') format('truetype'); /* Specify the path to your file */
+  src: url('/assets/PixelOperator.ttf') format('truetype'); /* Specify the path to your file */
   font-weight: normal; /* Optional: define weight if the font has only one */
   font-style: normal; /* Optional: define style */
 }
