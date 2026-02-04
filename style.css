@@ -374,7 +374,6 @@ a {
 }
 .buttons-image-1 {
     image-rendering: pixelated;
-    background: url('/assets/buttons.png') center bottom no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -388,7 +387,6 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.2;
     pointer-events: none;
 }
 .section-header {
@@ -461,6 +459,7 @@ a {
     cursor: pointer;
     image-rendering: pixelated; /* Ensures crisp edges when scaled up */
     image-rendering: crisp-edges; /* Fallback for better browser compatibility */
+
 }
 
 .rpg {
@@ -468,13 +467,17 @@ a {
     width: 21%;
     height: 69.6%;
     top: 50.2%;
-    left: 72.7%;
+    left: 72.9%;
     transform: translate(-50%, -50%);
     border: none;
     cursor: pointer;
     image-rendering: pixelated; /* Ensures crisp edges when scaled up */
     image-rendering: crisp-edges; /* Fallback for better browser compatibility */
+    
+
+    
 }
+
 @font-face {
   font-family: 'pixel'; /* Choose any name you like */
   src: url('/assets/PixelOperator.ttf') format('truetype'); /* Specify the path to your file */
