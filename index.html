@@ -51,12 +51,13 @@
                 <div class="buttons-container">
                     
                     <div  class="buttons">
+                        <div class="platformer" onclick="window.open('platformer');"></div>
+                        <div class="rpg" onclick="window.open('top-down');"></div>
                         <div class="buttons-image-1"></div>
                         <div class="buttons-image-2"></div>
                         <div class="buttons-image-3"></div>
                     </div>
-                    <div class="platformer" onclick="window.open('platformer');"></div>
-                    <div class="rpg" onclick="window.open('top-down');"></div>
+                    
                     <!-- <img src="/assets/glow-buttons.png" class="buttons"/> -->
                 </div>
             </div>
@@ -163,6 +164,27 @@
             // kick off the loop
             requestAnimationFrame(tick);
         })();
+
+        // Button hover effects
+        const platformerBtn = document.querySelector('.platformer');
+        const rpgBtn = document.querySelector('.rpg');
+        const buttonsImage1 = document.querySelector('.buttons-image-1');
+        
+        platformerBtn.addEventListener('mouseenter', () => {
+            buttonsImage1.style.backgroundImage = 'url("/assets/buttons2.png")';
+        });
+        
+        platformerBtn.addEventListener('mouseleave', () => {
+            buttonsImage1.style.backgroundImage = 'url("/assets/buttons.png")';
+        });
+        
+        rpgBtn.addEventListener('mouseenter', () => {
+            buttonsImage1.style.backgroundImage = 'url("/assets/buttons3.png")';
+        });
+        
+        rpgBtn.addEventListener('mouseleave', () => {
+            buttonsImage1.style.backgroundImage = 'url("/assets/buttons.png")';
+        });
 
     </script>
 
